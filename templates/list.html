@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Audio files</title>
+<form action="/" method=get>
+    <input type=submit value=Go&nbsp;Home>
+</form>
+<h1>Audio files</h1>
+{% if matches %}
+  <div>
+    <p>Here is the list of returned audio files</p>
+    <p id="matches">{{matches}}</p>
+  </div>
+{% endif %}

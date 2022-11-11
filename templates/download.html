@@ -1,0 +1,15 @@
+<!doctype html>
+<title>download audio file</title>
+<form action="/" method=get>
+    <input type=submit value=Go&nbsp;Home>
+</form>
+<h1>download audio file</h1>
+{% if filename %}
+  <div>
+    <p>Here is the preview of the uploaded audio: {{filename}}</p>
+    <audio controls>
+        <source src="{{ url_for("static", filename = filename) }}"  type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+{% endif %}
