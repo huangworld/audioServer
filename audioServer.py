@@ -96,6 +96,10 @@ def info():
 
 if __name__ == '__main__':
     # clean uploads/ on rebooting server
-    for f in os.listdir(UPLOAD_FOLDER):
-        os.remove(os.path.join(UPLOAD_FOLDER, f))
+    # create if not exist
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
+    else:
+        for f in os.listdir(UPLOAD_FOLDER):
+            os.remove(os.path.join(UPLOAD_FOLDER, f))
     app.run(debug=True)
